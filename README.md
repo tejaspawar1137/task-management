@@ -3,7 +3,7 @@
 This is a Kanban-style Task Management App built using React.js, Firebase, Zustand, and TailwindCSS.
 
 ## 🚀 Live Demo
-[Click here to see the live demo](#) *(Replace with your Firebase Hosting URL)*
+[Click here to see the live demo](#) *https://task-management-a3f77.web.app*
 
 ## 📂 Project Overview
 This app allows users to manage tasks with authentication, real-time updates, drag-and-drop functionality, filtering, sorting, and activity logs.
