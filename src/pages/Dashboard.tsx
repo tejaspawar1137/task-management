@@ -113,12 +113,12 @@ const KanbanBoard: React.FC = () => {
   // Handle add/edit save with log
  const handleSave = async (taskData: Task): Promise<void> => {
   try {
-    // Remove the 'id' field from taskData
+
     const { id, ...data } = taskData;
     
     if (taskToEdit) {
       const taskRef = doc(db, "tasks", taskToEdit.id!);
-      // Update without the 'id'
+
       await updateDoc(taskRef, data as Partial<Task>);
       toast.success("Task updated successfully");
       if (currentUser) {
@@ -170,7 +170,7 @@ const sortedTasks = [...filteredTasks].sort((a, b) => {
   return a.title.localeCompare(b.title);
 });
 
-  // Open modal to edit a task
+
   const handleEdit = (task: Task): void => {
     setTaskToEdit(task);
     setShowModal(true);
@@ -180,7 +180,7 @@ const sortedTasks = [...filteredTasks].sort((a, b) => {
     <DndProvider backend={HTML5Backend}>
       <div className="min-h-screen bg-gradient-to-br from-gray-100 to-white p-8">
         <Toaster />
-        {/* Header and Controls */}
+    
         <div className="mb-8">
           <h1 className="text-4xl font-bold text-gray-800 mb-6 text-center">
             Task Management
@@ -224,7 +224,7 @@ const sortedTasks = [...filteredTasks].sort((a, b) => {
           </div>
         </div>
 
-        {/* Add Task Button */}
+ 
         <div className="mb-8 flex justify-center">
           <button
             className="bg-pink-600 text-white px-6 py-3 rounded-lg hover:bg-pink-700 transition duration-200"
@@ -238,7 +238,7 @@ const sortedTasks = [...filteredTasks].sort((a, b) => {
         </div>
 
         <div className="flex flex-col lg:flex-row gap-8">
-          {/* Kanban Board */}
+  
           <div className="flex-grow grid grid-cols-1 md:grid-cols-3 gap-8">
             <Column
               title="To Do"
@@ -266,7 +266,6 @@ const sortedTasks = [...filteredTasks].sort((a, b) => {
             />
           </div>
 
-          {/* Activity Log Sidebar */}
           {showActivityLog && (
             <div className="w-full lg:w-80 bg-white p-6 rounded-2xl shadow-xl">
               <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center">
@@ -309,7 +308,7 @@ const sortedTasks = [...filteredTasks].sort((a, b) => {
           )}
         </div>
 
-        {/* Modal for Add/Edit Task */}
+     
         {showModal && (
           <TaskForm
             initialTask={taskToEdit || undefined}

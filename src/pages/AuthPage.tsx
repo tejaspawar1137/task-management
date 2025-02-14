@@ -51,7 +51,7 @@ const AuthPage: React.FC = () => {
       navigate("/dashboard");
       googleLogin();
     } catch (err: unknown) {
-      // You can narrow err if you want: (err as FirebaseError)
+ 
       setError("Failed to sign in with Google");
     }
   };
